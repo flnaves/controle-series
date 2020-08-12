@@ -5,18 +5,19 @@
     <meta http-equiv="Content-Language" content="pt-br">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
 </head>
-<title>Lista todas as séries</title>
+<title>Adicionar Série</title>
 <body>
     <div class="class container">
         <div class="class jumbotron">
-            <h1>Lista de Séries</h1>
+            <h1>Adicionar Série</h1>
         </div>
-        <a href="series/criar" class="btn btn-dark mb-2">Adicionar</a>
-        <ul class="list-group">
-            <?php foreach ($series as $serie) : ?>
-                <li class="list-group-item"><?= $serie; ?></li>
-            <?php endforeach; ?> 
-        </ul>
+        <form method="post">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" name="nome" id="nome"/>
+            </div>
+            <button class="btn btn-primary">Adicionar</button>
+        </form>
     </div>
 </body>
 </html>

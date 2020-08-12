@@ -14,8 +14,13 @@ class SeriesController extends Controller
             'House'
         ];
 
-        return view('series\index', compact('series'));
+        return view('series.index', compact('series'));
 
+    }
+
+    public function create()
+    {
+        return view('series.create');
     }
 }
 ?>
