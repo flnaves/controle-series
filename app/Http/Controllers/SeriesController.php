@@ -9,11 +9,7 @@ class SeriesController extends Controller
 {
     public function index(Request $request)
     {
-        $series = [
-            'Friends',
-            'How i Met Your Mother',
-            'House'
-        ];
+        $series = Serie::All();
 
         return view('series.index', compact('series'));
 
@@ -26,10 +22,14 @@ class SeriesController extends Controller
 
     public function store(Request $request)
     {
+        # UMA FORMA DE GRAVAR UTILIZANDO O REQUEST TODO
+        # $serie = Serie::Create($request->all());
         $nome = $request->nome;
-        $serie = new Serie();
-        $serie->nome = $nome;
-        var_dump($serie->save());
+        $serie = Serie::Create([
+            'nome' => $nome,
+        ]);
+
+        echo "Série com o id { $serie->id } criada:{$serie->nome}";
     }
 
 }
