@@ -26,7 +26,7 @@ class SeriesController extends Controller
         # UMA FORMA DE GRAVAR UTILIZANDO O REQUEST TODO
         $serie = Serie::Create($request->all());
         $request->session()
-        ->put(
+        ->flash(
             'mensagem',
             "Série {$serie->id} criada com sucesso {$serie->nome}"
         );
