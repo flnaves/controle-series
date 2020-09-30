@@ -15,6 +15,7 @@ class CriarTabelasSeries extends Migration
     {
         // Criar tabela e campos
         Schema::create('series', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('nome');
         });
     }

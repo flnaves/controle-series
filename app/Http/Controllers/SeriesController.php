@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Serie;
+use Symfony\Component\VarDumper\Test\VarDumperTestTrait;
 
 class SeriesController extends Controller
 {
@@ -32,6 +33,12 @@ class SeriesController extends Controller
         );
 
         return redirect('/series');
+    }
+
+    public function destroy (Request $request) 
+    {
+        echo $request->id;
+        echo var_dump($request);
     }
 
 }
