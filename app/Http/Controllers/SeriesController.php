@@ -37,8 +37,14 @@ class SeriesController extends Controller
 
     public function destroy (Request $request) 
     {
-        echo $request->id;
-        echo var_dump($request);
+        $request->session()
+        ->flash(
+            'mensagem',
+            "Série eliminada com sucesso"
+        );
+        Serie::destroy($request->id);
+
+        return redirect('/series');
     }
 
 }
